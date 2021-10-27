@@ -1,4 +1,4 @@
-# jetpack-compose-training-summary-notes
+#### jetpack-compose-training-summary-notes
 -composable functions are what give the app the UI part  
 -`setContent` defines the app layout and its where we call the *composable functions*  
 -*composable functions* can only be called from composable functions  
@@ -8,9 +8,24 @@
 ##Layouts  
 in compose, we build UI hierarchy by calling composable functions inside other composable functions  
 modifiers are used in styling individual elements like rows children, columns and Image resources etc  
-### Material design  
+##### Material design  
 To implement Material components in compose, we need to wrap the composable function with the **`ApplicationNameTheme{}`** added in both the preview and setContent  
 Marterial is built around **Color**,**Typography** and **Shape**  
+  
+
+Never let a composable update shared object, observable or  read/write to **sharedprefferences** *(the 3 are called side-effects)* this can be done in the background and then pass the value, This makes the fun fast.  
+##### Note
+1. Composable functions can execute in any order.
+2. Composable functions can execute in parallel.
+3. Recomposition skips as many composable functions and lambdas as possible.
+4. Recomposition is optimistic and may be canceled.
+5. A composable function might be run quite frequently, as often as every frame of an animation.  
+
+executing all composable functions or lambdas should be side-effect free. When you need to perform a side-effect, trigger it from a callback.  
+Recomposition is optimistic, which means Compose expects to finish recomposition before the parameters change again. If a parameter does change before recomposition finishes, Compose might cancel the recomposition and restart it with the new parameter.  
+
+
+
 
 
 
