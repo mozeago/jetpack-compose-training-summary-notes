@@ -10,7 +10,7 @@ in compose, we build UI hierarchy by calling composable functions inside other c
 modifiers are used in styling individual elements like rows children, columns and Image resources etc  
 ##### Material design  
 To implement Material components in compose, we need to wrap the composable function with the **`ApplicationNameTheme{}`** added in both the preview and setContent  
-Marterial is built around **Color**,**Typography** and **Shape**  
+Material is built around **Color**,**Typography** and **Shape**  
   
 
 Never let a composable update shared object, observable or  read/write to **sharedprefferences** *(the 3 are called side-effects)* this can be done in the background and then pass the value, This makes the fun fast.  
