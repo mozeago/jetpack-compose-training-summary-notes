@@ -24,6 +24,7 @@ Never let a composable update shared object, observable or  read/write to **shar
 executing all composable functions or lambdas should be side-effect free. When you need to perform a side-effect, trigger it from a callback.  
 Recomposition is optimistic, which means Compose expects to finish recomposition before the parameters change again. If a parameter does change before recomposition finishes, Compose might cancel the recomposition and restart it with the new parameter.  
 If your composable function needs data, it should define parameters for the data. You can then move expensive work to another thread, outside of composition, and pass the data to Compose using `mutableStateOf` or `LiveData`.  
+*Modifiers* tell a UI how to layout, display or behave within its parent layout.  
 
 
 
