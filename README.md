@@ -25,6 +25,8 @@ executing all composable functions or lambdas should be side-effect free. When y
 Recomposition is optimistic, which means Compose expects to finish recomposition before the parameters change again. If a parameter does change before recomposition finishes, Compose might cancel the recomposition and restart it with the new parameter.  
 If your composable function needs data, it should define parameters for the data. You can then move expensive work to another thread, outside of composition, and pass the data to Compose using `mutableStateOf` or `LiveData`.  
 *Modifiers* tell a UI how to layout, display or behave within its parent layout.  
+*by* keyword in **remember** is used instead of the `=`. This is a property delegate that saves you from typing `.value` every time.  
+
 
 
 
