@@ -27,7 +27,10 @@ If your composable function needs data, it should define parameters for the data
 *Modifiers* tell a UI how to layout, display or behave within its parent layout.  
 *by* keyword in **remember** is used instead of the `=`. This is a property delegate that saves you from typing `.value` every time.  
 **State hoisting** is putting a *state* that is modified by many functions under one ancestor. This reduces state duplication and code easier for testing. States that dont need to be controlled/edited by parents should not be hoisted.  
-In Compose you *don't hide UI elements*. Instead, you simply don't add them to the composition, so they're not added to the UI tree that Compose generates.  
+In Compose you *don't hide UI elements*. Instead, you simply don't add them to the composition, so they're not added to the UI tree that Compose generates. You do this with simple conditional Kotlin logic.  
+**Callbacks** are functions passed as functions arguments.  
+parameters are what act as placeholders for values to go to a function when creating it, argumemnts are what you pass when you call the function.  
+
 
 
 
