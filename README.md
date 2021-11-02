@@ -30,6 +30,8 @@ If your composable function needs data, it should define parameters for the data
 In Compose you *don't hide UI elements*. Instead, you simply don't add them to the composition, so they're not added to the UI tree that Compose generates. You do this with simple conditional Kotlin logic.  
 **Callbacks** are functions passed as functions arguments.  
 `parameters` are what act as *placeholders for values to go to a function when creating it*, `argumemnts` are *what you pass when you call the function*.  
+In its basic usage, the `LazyColumn` API provides an `items` element within its scope, where individual item rendering logic is written. Make sure you import `androidx.compose.foundation.lazy.items` as Android Studio will pick a different items function by default.  
+
 
 
 
