@@ -26,6 +26,8 @@ Recomposition is optimistic, which means Compose expects to finish recomposition
 If your composable function needs data, it should define parameters for the data. You can then move expensive work to another thread, outside of composition, and pass the data to Compose using `mutableStateOf` or `LiveData`.  
 *Modifiers* tell a UI how to layout, display or behave within its parent layout.  
 *by* keyword in **remember** is used instead of the `=`. This is a property delegate that saves you from typing `.value` every time.  
+**State hoisting** is putting a *state* that is modified by many functions under one ancestor. This reduces state duplication and code easier for testing. States that dont need to be controlled/edited by parents should not be hoisted.  
+
 
 
 
