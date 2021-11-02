@@ -31,8 +31,8 @@ In Compose you *don't hide UI elements*. Instead, you simply don't add them to t
 **Callbacks** are functions passed as functions arguments.  
 `parameters` are what act as *placeholders for values to go to a function when creating it*, `argumemnts` are *what you pass when you call the function*.  
 In its basic usage, the `LazyColumn` API provides an `items` element within its scope, where individual item rendering logic is written. Make sure you import `androidx.compose.foundation.lazy.items` as Android Studio will pick a different items function by default.  
-*LazyColumn doesn't recycle its children like RecyclerView. It emits new Composables as you scroll through it and is still performant, as emitting Composables is relatively cheap compared to instantiating Android Views.*
-
+*LazyColumn doesn't recycle its children like RecyclerView. It emits new Composables as you scroll through it and is still performant, as emitting Composables is relatively cheap compared to instantiating Android Views.*  
+Instead of using `remember` you can use `rememberSaveable`. This will save each state surviving configuration changes (such as **rotations**) and **process death**.  
 
 
 
