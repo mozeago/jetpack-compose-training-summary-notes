@@ -33,6 +33,7 @@ In Compose you *don't hide UI elements*. Instead, you simply don't add them to t
 In its basic usage, the `LazyColumn` API provides an `items` element within its scope, where individual item rendering logic is written. Make sure you import `androidx.compose.foundation.lazy.items` as Android Studio will pick a different items function by default.  
 *LazyColumn doesn't recycle its children like RecyclerView. It emits new Composables as you scroll through it and is still performant, as emitting Composables is relatively cheap compared to instantiating Android Views.*  
 Instead of using `remember` you can use `rememberSaveable`. This will save each state surviving configuration changes (such as **rotations**) and **process death**.  
+Any animation created with `animate*AsState` is interruptible. This means that if the target value changes in the middle of the animation, `animate*AsState` restarts the animation and points to the new value.  
 
 
 
