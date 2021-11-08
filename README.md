@@ -34,6 +34,9 @@ In its basic usage, the `LazyColumn` API provides an `items` element within its 
 *LazyColumn doesn't recycle its children like RecyclerView. It emits new Composables as you scroll through it and is still performant, as emitting Composables is relatively cheap compared to instantiating Android Views.*  
 Instead of using `remember` you can use `rememberSaveable`. This will save each state surviving configuration changes (such as **rotations**) and **process death**.  
 Any animation created with `animate*AsState` is interruptible. This means that if the target value changes in the middle of the animation, `animate*AsState` restarts the animation and points to the new value.  
+### Layouts in Jetpack Compose  
+By convention, a composable `modifier` is specified as the first optional parameter of a function. This enables you to specify a modifier on a composable without having to name all parameters. e.g `modifier: Modifier = Modifier` If you're creating your own composable, consider having a modifier as a parameter, default it to `Modifier` (i.e. empty modifier that doesn't do anything) and apply it to the root composable of your function.  
+
 
 
 
