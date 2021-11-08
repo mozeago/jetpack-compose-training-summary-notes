@@ -38,3 +38,7 @@ Any animation created with `animate*AsState` is interruptible. This means that i
 By convention, a composable `modifier` is specified as the first optional parameter of a function. This enables you to specify a modifier on a composable without having to name all parameters. e.g `modifier: Modifier = Modifier` If you're creating your own composable, consider having a modifier as a parameter, default it to `Modifier` (i.e. empty modifier that doesn't do anything) and apply it to the root composable of your function.  
 Be mindful when chaining modifiers as the order matters. As they're concatenated into a single argument, the order affects the final result.  
 e.g if padding was applied before the clickable modifier in a Row layout you will have not all of the area clickable because you told *"apply padding and then make the remaining place clickable"*-padding is excluded form the click. If we apply the padding modifier after the clickable one then the padding is included in the clickable area:  
+#### Slot APIs  
+Slots leave an empty space in the UI for the developer to fill as they wish.  
+Compose uses Slots heavily in more complex components such as the Top App Bar.  
+When building your own composables, you can use the `Slots API pattern` to make them more reusable.  
