@@ -42,3 +42,5 @@ e.g if padding was applied before the clickable modifier in a Row layout you wil
 Slots leave an empty space in the UI for the developer to fill as they wish.  
 Compose uses Slots heavily in more complex components such as the Top App Bar.  
 When building your own composables, you can use the `Slots API pattern` to make them more reusable.  
+Scaffold allows you to implement a UI with the basic Material Design layout structure. It provides slots for the most common top-level Material components such as TopAppBar, BottomAppBar, FloatingActionButton and Drawer.
+
