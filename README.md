@@ -47,5 +47,6 @@ Scaffold allows you to implement a UI with the basic Material Design layout stru
 LazyColumn renders only the visible items on screen, allowing performance gains and doesn't need to `scroll` modifier.
 ConstraintLayout can help you place composables relative to others on the screen and is an alternative to using multiple Rows, Columns and Boxes. ConstraintLayout is useful when implementing larger layouts with more complicated alignment requirements.  
 By default, the children of ConstraintLayout will be allowed to choose the size they need to wrap their content. For example, this means that a Text is able to go outside the screen bounds when the text is too long:  
+At its core, state in an application is any value that can change over time. This is a very broad definition, and encompases everything from a Room database to a variable on a class.  
 
 
