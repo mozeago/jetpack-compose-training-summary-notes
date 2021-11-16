@@ -49,4 +49,3 @@ ConstraintLayout can help you place composables relative to others on the screen
 By default, the children of ConstraintLayout will be allowed to choose the size they need to wrap their content. For example, this means that a Text is able to go outside the screen bounds when the text is too long:  
 At its core, state in an application is any value that can change over time. This is a very broad definition, and encompases everything from a Room database to a variable on a class.  
 
-
