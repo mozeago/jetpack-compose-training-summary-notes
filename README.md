@@ -45,5 +45,6 @@ When building your own composables, you can use the `Slots API pattern` to make 
 Scaffold allows you to implement a UI with the basic Material Design layout structure. It provides slots for the most common top-level Material components such as TopAppBar, BottomAppBar, FloatingActionButton and Drawer. With Scaffold, you make sure these components will be positioned and work together correctly.  
 **LazyColumn** in Jetpack Compose is the equivalent of RecyclerView in Android Views.  
 LazyColumn renders only the visible items on screen, allowing performance gains and doesn't need to `scroll` modifier.
+ConstraintLayout can help you place composables relative to others on the screen and is an alternative to using multiple Rows, Columns and Boxes. ConstraintLayout is useful when implementing larger layouts with more complicated alignment requirements.  
 
 
