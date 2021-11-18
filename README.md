@@ -57,5 +57,5 @@ if a lambda function does not return anything you use**`Unit`** `val printName:(
 `by` is the property delegate syntax in Kotlin, it lets us automatically unwrap the `State<List<TodoItem>>` from `observeAsState` into a regular `List<TodoItem>`  
 `observeAsState` observes a `LiveData` and returns a `State` object that is updated whenever the `LiveData` changes.  
 It will automatically stop observing when the composable is removed from composition.  
-
-  
+A *stateful* composable is a composable that owns a piece of `state` that it can change over time.  
+`LocalContentColor` gives you the preferred color for content such as Icons and Typography. It is changed by composables such as `Surface` that draw a background.  
