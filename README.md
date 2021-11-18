@@ -83,4 +83,6 @@ You declare a MutableState object in a composable three ways:
 2. `var value by remember { mutableStateOf(default) }`
 3. `val (value, setValue) = remember { mutableStateOf(default) }`
 When creating `State<T>` (or other stateful objects) in composition, it's important to remember it. Otherwise it will be re-initialized every composition.  
-
+`MutableState<T>` similar to `MutableLiveData<T>`, but integrated with the compose runtime. Since it's observable, it will tell compose whenever it's updated so compose can recompose any composables that read it.  
+State hoisting is a pattern of moving state up to make a component stateless.
+When applied to composables, this often means introducing two parameters to the composable.
