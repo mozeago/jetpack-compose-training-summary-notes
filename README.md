@@ -59,3 +59,9 @@ if a lambda function does not return anything you use**`Unit`** `val printName:(
 It will automatically stop observing when the composable is removed from composition.  
 A *stateful* composable is a composable that owns a piece of `state` that it can change over time.  
 `LocalContentColor` gives you the preferred color for content such as Icons and Typography. It is changed by composables such as `Surface` that draw a background.  
+**Recomposition** is the process of calling composables again with new inputs to update the compose tree.  
+When Compose runs composition the first time it builds a tree of every composable that was called. Then, during recomposition, updates the tree with the new composables that get called.  
+A side-effect is any changes that's visible outside of the execution of a composable function.  
+Recomposing a composable should be side-effect free.  
+
+
