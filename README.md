@@ -51,4 +51,5 @@ At its core, state in an application is any value that can change over time. Thi
 A stateless composable is a composable that cannot directly change any state.  
 State hoisting is a pattern of moving state up to the viewModel to make a component stateless.  
 to create a lambda function in kotlin, we use the val/var keyword but not the fun keyword  
-
+it is used as a placeholder parameter for lambda function.  
+if a lambda function does not return anything you use**`Unit`** `val printName:(String)->Unit={*it*}` `it` is used as the parameter placeholder name just incase you dont want to specify the parameter name.  
