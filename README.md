@@ -77,4 +77,10 @@ For example, animation state for a short animation is safe to remember in a chil
 `TextField` is the compose equivalent to Material's `EditText`  
 `TextField` in compose is a stateless composable meaning it displays whatever you tell it to and issues events when the user types.  
 Built-in composables are designed for unidirectional data flow. Most built-in composables provide at least one stateless version for each API. Compared to the View system, the built-in composables provide an option without internal state for stateful UI such as editable text. This avoids duplicated state between your application and the component. For example, it's possible in Compose to hoist the state for a `Checkbox` to a server-based API with no duplicated state.  
+A `stateful` composable is a composable that owns a piece of state that it can change over time.  
+You declare a MutableState object in a composable three ways:
+1. `val state = remember { mutableStateOf(default) }`
+2. `var value by remember { mutableStateOf(default) }`
+3. `val (value, setValue) = remember { mutableStateOf(default) }`
+When creating `State<T>` (or other stateful objects) in composition, it's important to remember it. Otherwise it will be re-initialized every composition.  
 
