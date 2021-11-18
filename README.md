@@ -63,5 +63,6 @@ A *stateful* composable is a composable that owns a piece of `state` that it can
 When Compose runs composition the first time it builds a tree of every composable that was called. Then, during recomposition, updates the tree with the new composables that get called.  
 A side-effect is any changes that's visible outside of the execution of a composable function.  
 Recomposing a composable should be side-effect free.  
-
-
+`remember` gives a composable function memory.
+A value computed by `remembe`r will be stored in the composition tree, and only be recomputed if the *keys* to remember change.
+You can think of `remember` as giving storage for a single object to a function the same way a `private val` property does in an object.  
