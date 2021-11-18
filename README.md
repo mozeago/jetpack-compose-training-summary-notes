@@ -68,3 +68,13 @@ A value computed by `remembe`r will be stored in the composition tree, and only 
 You can think of `remember` as giving storage for a single object to a function the same way a `private val` property does in an object.  
 Values remembered in composition are forgotten as soon as their calling composable is removed from the tree. They will also be re-initialized if the calling composable moves in the tree. You can cause this in the *`LazyColumn`* by removing items at the top.  
 An **idempotent** composable always produces the same result for the same inputs and has no side-effects on recomposition. *Composables should be idempotent to support* recomposition.  
+When adding memory to a composable, always ask yourself "will some caller reasonably want to control this?"  
+If the answer is **yes**, make a parameter instead.  
+If the answer is **no**, keep it as a local variable.  
+`Remember` stores values in the Composition, and will forget them if the composable that called `remember` is removed.
+This means you shouldn't rely upon `remember` to store important things inside of composables that add and remove children such as `LazyColumn`.
+For example, animation state for a short animation is safe to remember in a child of LazyColumn, but a Todo task's completion would be forgotten on scroll if remembered here.  
+`TextField` is the compose equivalent to Material's `EditText`  
+`TextField` in compose is a stateless composable meaning it displays whatever you tell it to and issues events when the user types.  
+Built-in composables are designed for unidirectional data flow. Most built-in composables provide at least one stateless version for each API. Compared to the View system, the built-in composables provide an option without internal state for stateful UI such as editable text. This avoids duplicated state between your application and the component. For example, it's possible in Compose to hoist the state for a `Checkbox` to a server-based API with no duplicated state.  
+
