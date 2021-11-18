@@ -50,4 +50,5 @@ By default, the children of ConstraintLayout will be allowed to choose the size 
 At its core, state in an application is any value that can change over time. This is a very broad definition, and encompases everything from a Room database to a variable on a class.  
 A stateless composable is a composable that cannot directly change any state.  
 State hoisting is a pattern of moving state up to the viewModel to make a component stateless.  
+to create a lambda function in kotlin, we use the val/var keyword but not the fun keyword  
 
