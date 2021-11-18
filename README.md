@@ -66,3 +66,5 @@ Recomposing a composable should be side-effect free.
 `remember` gives a composable function memory.
 A value computed by `remembe`r will be stored in the composition tree, and only be recomputed if the *keys* to remember change.
 You can think of `remember` as giving storage for a single object to a function the same way a `private val` property does in an object.  
+Values remembered in composition are forgotten as soon as their calling composable is removed from the tree. They will also be re-initialized if the calling composable moves in the tree. You can cause this in the *`LazyColumn`* by removing items at the top.  
+An **idempotent** composable always produces the same result for the same inputs and has no side-effects on recomposition. *Composables should be idempotent to support* recomposition.  
