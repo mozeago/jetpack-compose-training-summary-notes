@@ -53,3 +53,7 @@ State hoisting is a pattern of moving state up to the viewModel to make a compon
 to create a lambda function in kotlin, we use the val/var keyword but not the fun keyword  
 it is used as a placeholder parameter for lambda function.  
 if a lambda function does not return anything you use**`Unit`** `val printName:(String)->Unit={*it*}` `it` is used as the parameter placeholder name just incase you dont want to specify the parameter name.  
+`listOf()` is an initial value to avoid possible null results before the `LiveData` is initialized, if it wasn't passed items would be `List<TodoItem>?` which is nullable.  
+`by` is the property delegate syntax in Kotlin, it lets us automatically unwrap the `State<List<TodoItem>>` from `observeAsState` into a regular `List<TodoItem>`  
+
+  
