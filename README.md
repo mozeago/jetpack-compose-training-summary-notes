@@ -86,3 +86,9 @@ When creating `State<T>` (or other stateful objects) in composition, it's import
 `MutableState<T>` similar to `MutableLiveData<T>`, but integrated with the compose runtime. Since it's observable, it will tell compose whenever it's updated so compose can recompose any composables that read it.  
 State hoisting is a pattern of moving state up to make a component stateless.
 When applied to composables, this often means introducing two parameters to the composable.
+There is no "visibility" property in compose. Since compose can dynamically change the composition, you do not need to set visibility gone. Instead, remove composables from the composition.  
+To handle work with the keyboard, TextField provides two parameters:
+
+1. keyboardOptions - used to enable showing the Done IME action
+2. keyboardActions - used to specify the action to be triggered in response to specific IME actions triggered - in our case, once Done is pressed, we want submit to be called and the keyboard to be hidden.  
+
