@@ -88,7 +88,14 @@ State hoisting is a pattern of moving state up to make a component stateless.
 When applied to composables, this often means introducing two parameters to the composable.
 There is no "visibility" property in compose. Since compose can dynamically change the composition, you do not need to set visibility gone. Instead, remove composables from the composition.  
 To handle work with the keyboard, TextField provides two parameters:
-
 1. keyboardOptions - used to enable showing the Done IME action
 2. keyboardActions - used to specify the action to be triggered in response to specific IME actions triggered - in our case, once Done is pressed, we want submit to be called and the keyboard to be hidden.  
-
+When hoisting state, there are three rules to help you figure out where it should go
+1. State should be hoisted to at least the lowest common parent of all composables that use the state (or read)
+2. State should be hoisted to at least the highest level it may be changed (or modified)
+3. If two states change in response to the same events they should be hoisted together
+You can hoist state higher than these rules require, but underhoisting state will make it difficult or impossible to follow unidirectional data flow.  
+`LazyColumn` is for displaying large lists of items.
+It only composes the items currently on the screen, and disposes of them as soon as they leave. Unlike RecyclerView it doesn't need to do any recycling – compose handles the creation of new composables in a more efficient manner.  
+#### Jetpack Compose Navigation  
+The `NavController` is the central component when using Navigation in Compose; it keeps track of back stack entries, moves the stack forward, enables back stack manipulation, and navigating between screen states. Because NavController is central to navigation it has to be created first in order to navigate to destinations.
