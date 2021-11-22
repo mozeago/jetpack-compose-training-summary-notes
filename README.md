@@ -98,4 +98,6 @@ You can hoist state higher than these rules require, but underhoisting state wil
 `LazyColumn` is for displaying large lists of items.
 It only composes the items currently on the screen, and disposes of them as soon as they leave. Unlike RecyclerView it doesn't need to do any recycling – compose handles the creation of new composables in a more efficient manner.  
 #### Jetpack Compose Navigation  
-The `NavController` is the central component when using Navigation in Compose; it keeps track of back stack entries, moves the stack forward, enables back stack manipulation, and navigating between screen states. Because NavController is central to navigation it has to be created first in order to navigate to destinations.
+The `NavController` is the central component when using Navigation in Compose; it keeps track of back stack entries, moves the stack forward, enables back stack manipulation, and navigating between screen states. Because NavController is central to navigation it has to be created first in order to navigate to destinations.  
+Primary is your main brand color and secondary is used to provide accents. You can supply darker/lighter variants for contrasting areas. Background and surface colors are used for containers holding components which notionally live on a "surface" in your application.  
+`App Bars` use `h6` style by default, Buttons use, err, `button` he Material type scale generator tool can help you to build your type scale.  
