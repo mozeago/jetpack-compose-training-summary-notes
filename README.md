@@ -101,3 +101,7 @@ It only composes the items currently on the screen, and disposes of them as soon
 The `NavController` is the central component when using Navigation in Compose; it keeps track of back stack entries, moves the stack forward, enables back stack manipulation, and navigating between screen states. Because NavController is central to navigation it has to be created first in order to navigate to destinations.  
 Primary is your main brand color and secondary is used to provide accents. You can supply darker/lighter variants for contrasting areas. Background and surface colors are used for containers holding components which notionally live on a "surface" in your application.  
 `App Bars` use `h6` style by default, Buttons use, err, `button` he Material type scale generator tool can help you to build your type scale.  
+The core element for implementing theming in Jetpack Compose is the MaterialTheme composable. Placing this composable in your compose hierarchy allows you to specify your customisations to color, type and shapes for all components within it.  
+`Color` has a number of useful methods on it such as copy allowing you to create a new color with different alpha/red/green/blue values.  
+You can use the LocalContentColor CompositionLocal to retrieve the color which contrasts with the current background:  
+When setting the color of any elements, prefer using a Surface to do this as it sets an appropriate content color CompositionLocal value, be wary of direct Modifier.background calls which do not set an appropriate content color.  
