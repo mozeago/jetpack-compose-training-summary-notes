@@ -112,3 +112,14 @@ Material design suggests avoiding large areas of bright colors in dark theme. A 
 Just like with colors, it's best to retrieve TextStyles from the current theme, encouraging you to use a small, consistent set of styles and making them more maintainable. MaterialTheme.typography retrieves the Typography instance set in your MaterialTheme composable, enabling you to use the styles you defined:  
 If you need to apply multiple styles to some text, then you can use the AnnotatedString class to apply markup, adding SpanStyles to a range of text. You can either add these dynamically or use the DSL syntax to create content:  
 You can of course use shapes yourself when creating your own components by using composables or Modifiers which accept shapes e.g. Surface, Modifier.clip, Modifier.background, Modifier.border etc.  
+##### Navigation component  
+1. Navigation graph
+2. NavHostFragment
+3. NavController
+All these 3 work together.
+##### Naviagtion graph  
+xml file that has info about the novigation and can be visualise. Each screen is called a destination. The arrows are called actions and are the paths the user can take to reach the destination.  
+##### NavHost Fragment  
+This is  the fragment widget that swapps destinations.  
+##### Navcontroller  
+each NavHost fragment has a Navcontroller, this is where it instructs the navigation to occur. Best to use the **SafeArgs Plugin** which generates classes based off your nav graph.
